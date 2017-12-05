@@ -1,0 +1,29 @@
+<ion-content padding class="page-about">
+	<ion-list>
+		<ion-list-header>
+			Listado completo de alumnos
+		</ion-list-header>
+		
+		<ion-item ion-item *ngFor="let item of listStudents" >
+			<a  (click)="studentSelected(item)">
+				{{ item.nombre }}
+			</a>
+
+			<div  [hidden]="item.showDetail">
+
+				<ion-grid>
+					<ion-row>
+						<ion-col>
+							<b>Apellido: </b> {{ item.apellido }}
+						</ion-col>
+						<ion-col>
+							<b>Localidad: </b> {{ item.localidad }}
+						</ion-col>
+					</ion-row>
+				</ion-grid>
+
+			</div>
+		</ion-item>
+
+	</ion-list>
+</ion-content>
